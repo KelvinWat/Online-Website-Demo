@@ -7,20 +7,23 @@ import Title from './Title';
 export default function ProductList() {
 
 
+   let [productList, setProductList] = useState([])
 
-  //need fetch api, but i do not have 
-  //also need integrate it in javascript course
-  let [productList, setProductList] = useState([])
-  /*
+ useEffect(()=>{
+    
+    fetch(process.env.PUBLIC_URL + '/products.json')
+    .then(response => response.json())
+    .then(data =>  {
+      setProductList(data);
+    })
+    .catch(error => console.log(`Error: ${error}`));
+
+    
+    console.log(productList)
+     
+   },[])
+
   
-  fetch('api link')
-    .then(response => response.json)
-    .then(data => setProductList(data))
-  */
-
-  useEffect(()=>{
-    //
-  })
 
   return (
     <div>
@@ -29,11 +32,9 @@ export default function ProductList() {
       
       <div>
         {
-        ProductList.map(product=>(
+        productList.map(product=>(
           <div className ={styles.productBorder} key={product.id}>
-            404.jpg <br/>
             {product.name}<br/>
-            discription<br/>
             {product.price} <br/>
             <Link to = {'/product/' + product.id}>detail</Link> <br/>
           </div>
