@@ -1,33 +1,46 @@
 import React from 'react'
 import styles from './ProductList.module.css'
+import {useState,useEffect} from 'react' //react Hook
+import { Link } from 'react-router-dom';
+import Title from './Title';
 
 export default function ProductList() {
 
-  //to-do  add name, price,image ....
-  let ProductList = [
-    {"id" : 1, "price" : 99},
-    {"id" : 2, "price" : 33},
-    {"id" : 3, "price" : 44},
-    {"id" : 4, "price" : 66}
-  ]
+
+
+  //need fetch api, but i do not have 
+  //also need integrate it in javascript course
+  let [productList, setProductList] = useState([])
+  /*
   
+  fetch('api link')
+    .then(response => response.json)
+    .then(data => setProductList(data))
+  */
+
+  useEffect(()=>{
+    //
+  })
 
   return (
     <div>
-      <h1 style = {{backgroundColor: 'orange',borderBottom: '5px solid red'}}>Choose Your Product</h1>
-      <h2>Product Information</h2>
-      <img src = {process.env.PUBLIC_URL + '/img/Tree.png'}/>
+
+      <Title mainTitle = "Choose Your Product" subTitle = "Product Information" />
+      
       <div>
         {
         ProductList.map(product=>(
-        <div className ={styles.productBorder} key={product.id}>
-          image.jpg (sample)<br/>
-          name<br/>
-          discription<br/>
-          {product.price}
-        </div>
+          <div className ={styles.productBorder} key={product.id}>
+            404.jpg <br/>
+            {product.name}<br/>
+            discription<br/>
+            {product.price} <br/>
+            <Link to = {'/product/' + product.id}>detail</Link> <br/>
+          </div>
         ))
-        }</div>
+
+        }
+      </div>
     </div>
   )
 }
