@@ -24,7 +24,7 @@ export default function ProductList() {
   
 
   return (
-    <div>
+    <>
 
       <Title mainTitle = "Choose Your Product" subTitle = "Product Information" />
       
@@ -40,6 +40,6 @@ export default function ProductList() {
 
         }
       </div>
-    </div>
+    </>
   )
 }

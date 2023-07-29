@@ -33,7 +33,7 @@ export default function Checkout() {
   const discountPrice = 39
 
   return (
-    <div>
+    <>
       <Title mainTitle = "Your Shopping Cart"/>
       
       <div>
@@ -64,13 +64,14 @@ export default function Checkout() {
             
             {/*discount when $39 */
               grandTotal >= discountPrice ?
-              <div>Total Price : ${grandTotal - 15}</div> :
+              <div>Total Price : ${grandTotal}<br/>
+              After discount:${grandTotal} - 15 = ${grandTotal - 15}</div> :
               <div>Total Price : ${grandTotal} <br/>
-                  買滿${discountPrice}優惠 $15</div> 
+                  Get $15 Discount when buy ${discountPrice} </div> 
             }
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

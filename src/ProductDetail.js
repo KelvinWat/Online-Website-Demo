@@ -24,7 +24,7 @@ export default function ProductDetail() {
 
 
   return (
-    <div>
+    <>
       {
         productDetail && 
         <div>
@@ -37,6 +37,6 @@ export default function ProductDetail() {
       }
 
       <Link to = "/">Back To Home Page </Link>
-    </div>
+    </>
   )
 }

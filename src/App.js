@@ -15,6 +15,7 @@ function App() {
         <Link to="/">home page</Link>
         &nbsp;&nbsp;
         <Link to="/Checkout">checkout</Link> <br/>
+
         <img src = '/img/Apple.png'></img>
         <img src = '/img/Banana.png'></img>
         <img src = '/img/Cherry.png'></img>
