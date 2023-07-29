@@ -1,14 +1,56 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import { CartContext } from './CartContext'
 
-export default function QuantityBtn() {
+export default function QuantityBtn({productInfo}) {
 
-    let [numInCart,setNumInCart] = useState(0)
+    const {cartItems,setCartItems} =  useContext(CartContext)
+
+    // find if the product already in cart
+    // if have will return the index in the array: 0,1,2.. if not return -1
+    let productIndexInCart = cartItems.findIndex((element)=>{
+        return element.id === productInfo.id
+    })
+
+    let [numInCart,setNumInCart] = useState(
+        (productIndexInCart === -1 )? 0 : 
+        cartItems[productIndexInCart].quantity
+        )
 
     const handleAdd = () => {
+        
+        //add new product in cart
+        if(productIndexInCart === -1){
+            setCartItems([{
+                id: productInfo.id,
+                name: productInfo.name,
+                image:productInfo.image,
+                price:productInfo.price,
+                quantity:1
+            },
+            ...cartItems]
+            )
+        } else { // add the quantity ++      
+            let newCartArray = [...cartItems]
+            newCartArray[productIndexInCart].quantity++
+            setCartItems(newCartArray)
+        }
+
         setNumInCart(numInCart+1)
     }
+
     const handleSubtract = () => {
+        //remove product in cart
+        if(cartItems[productIndexInCart].quantity === 1){
+            let newCartArray = [...cartItems]
+            newCartArray.splice(productIndexInCart,1)
+            setCartItems(newCartArray)   
+        } else {  
+            let newCartArray = [...cartItems]
+            newCartArray[productIndexInCart].quantity--
+            setCartItems(newCartArray)
+        }
+
         setNumInCart(numInCart-1)
     }
 
@@ -16,7 +58,7 @@ export default function QuantityBtn() {
     <div>
         {
         (numInCart === 0) ?
-        <div onClick ={handleAdd}>Add To Shopping Cart</div> :
+        <div onClick ={handleAdd}>Add {productInfo.name} To Shopping Cart</div> :
         <div>
             <span onClick ={handleSubtract}>-</span>
             number: {numInCart}

@@ -16,11 +16,8 @@ export default function ProductList() {
     .then(response => response.json())
     .then(data =>  {
       setProductList(data);
-    })
-    .catch(error => console.log(`Error: ${error}`));
-
-    
-    console.log(productList)
+    }) // can set the data to only the data we need, eg not including description / less description, only name / title of the product
+    .catch(error => console.log(`Error: ${error}`))
      
    },[])
 
@@ -37,7 +34,7 @@ export default function ProductList() {
           <div className ={styles.productBorder} key={product.id}>
             {product.name}<br/>
             {product.price} <br/>
-            <Link to = {'/product/' + product.id}>Detail</Link> <br/><QuantityBtn/>
+            <Link to = {'/product/' + product.id}>Detail</Link> <br/><QuantityBtn productInfo={product}/>
           </div>
         ))
 
