@@ -1,4 +1,17 @@
 .productBorder{
   border: 5px solid aquamarine;
-  margin: 20px 0px
+  background-color: antiquewhite;
+  margin: 20px 0px;
+  font-family: Arial;
+  align-content: center;
+}
+.productImage{
+  width: 300px;
+}
+.productInfo{
+  width: 300px;
+}
+.productPrice{
+  text-align:right;
+  font-size: 20px;
 }

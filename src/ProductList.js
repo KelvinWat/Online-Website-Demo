@@ -31,11 +31,28 @@ export default function ProductList() {
       <div>
         {
         productList.map(product=>(
-          <div className ={styles.productBorder} key={product.id}>
-            {product.name}<br/>
-            {product.price} <br/>
-            <Link to = {'/product/' + product.id}>Detail</Link> <br/><QuantityBtn productInfo={product}/>
-          </div>
+            <div className ={styles.productBorder} key={product.id}>
+              <Link to = {'/product/' + product.id}>
+                <span>
+                  <div className = {styles.productImage}>
+                    <img src = {process.env.PUBLIC_URL + '/img/' + product.image}/>
+                  </div>
+
+                  <div className = {styles.productInfo}>
+                    <div>{product.name}</div>
+                    <div className = {styles.productPrice}>${product.price}</div>
+                  </div>
+ 
+                </span> 
+
+              </Link>
+              <QuantityBtn productInfo={product}/>
+              
+            </div>
+            
+
+          
+          
         ))
 
         }
