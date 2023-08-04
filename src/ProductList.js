@@ -26,20 +26,20 @@ export default function ProductList() {
   return (
     <>
 
-      <Title mainTitle = "Choose Your Product" subTitle = "Product Information" />
+      <Title mainTitle = "Choose Your Product"/>
       
-      <div>
+      <div className ={styles.productListGrid}>
         {
         productList.map(product=>(
             <div className ={styles.productBorder} key={product.id}>
-              <Link to = {'/product/' + product.id}>
+              <Link to = {'/product/' + product.id} style={{ textDecoration: 'none' }}>
                 <span>
-                  <div className = {styles.productImage}>
-                    <img src = {process.env.PUBLIC_URL + '/img/' + product.image}/>
+                  <div>
+                    <img  className = {styles.productImage} src = {process.env.PUBLIC_URL + '/img/' + product.image}/>
                   </div>
 
                   <div className = {styles.productInfo}>
-                    <div>{product.name}</div>
+                    <div className = {styles.productName}>{product.name}</div>
                     <div className = {styles.productPrice}>${product.price}</div>
                   </div>
  

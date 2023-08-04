@@ -40,5 +40,12 @@
       "price": 9.99,
       "image":"cup.png",
       "description":"Cup description"
+    },
+    {
+      "id": 7,
+      "name": "T-Shirt",
+      "price": 19.99,
+      "image":"t-shirt.png",
+      "description":"T description"
     }
   ]
