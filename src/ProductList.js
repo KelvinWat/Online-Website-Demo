@@ -34,9 +34,9 @@ export default function ProductList() {
             <div className ={styles.productBorder} key={product.id}>
               <Link to = {'/product/' + product.id} style={{ textDecoration: 'none' }}>
                 <span>
-                  <div>
+                  <>
                     <img  className = {styles.productImage} src = {process.env.PUBLIC_URL + '/img/' + product.image}/>
-                  </div>
+                  </>
 
                   <div className = {styles.productInfo}>
                     <div className = {styles.productName}>{product.name}</div>

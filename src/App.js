@@ -10,19 +10,25 @@ function App() {
   const[cartItems, setCartItems] = useState([])
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <CartContext.Provider value = {{cartItems, setCartItems}}>
-        <Link to="/">home page</Link>
-        &nbsp;&nbsp;
-        <Link to="/Checkout">checkout</Link> <br/>
-
-        <img src = '/img/Apple.png'></img>
-        <img src = '/img/Banana.png'></img>
-        <img src = '/img/Cherry.png'></img>
-        <img src = '/img/Kiwi.png'></img>
-        <img src = '/img/Melon.png'></img>
-        <img src = '/img/Pineapple.png'></img>
-        <img src = '/img/Strawberry.png'></img>
+        <div className = 'homeBar'>
+          <Link to="/" className = 'homeBarLabel'>HomePage</Link>
+          <Link to="/" className = 'homeBarLabel'>Fruit</Link>
+          <Link to="/" className = 'homeBarLabel'>Clothes</Link>
+          <Link to="/" className = 'homeBarLabel'>Others</Link>
+          <Link to="/Checkout"  className = 'homeBarLabel'>Checkout</Link>
+        </div>
+        <div className = 'fruitBar'>
+          <img src = '/img/Apple.png' className =' fruitBarElement' alt="Apple"/>
+          <img src = '/img/Banana.png' className =' fruitBarElement' alt="Banana"/>
+          <img src = '/img/Cherry.png' className =' fruitBarElement' alt="Cherry"/>
+          <img src = '/img/Kiwi.png' className =' fruitBarElement' alt="Kiwi"/>
+          <img src = '/img/Melon.png' className =' fruitBarElement' alt="Melon"/>
+          <img src = '/img/Pineapple.png' className =' fruitBarElement' alt="Pineapple"/>
+          <img src = '/img/Strawberry.png' className =' fruitBarElement' alt="Strawberry"/>
+        </div>
+        
         <Routes>
           <Route path = "/" element={<ProductList/>} />
           <Route path = "Checkout" element={<Checkout/>} />
@@ -31,6 +37,14 @@ function App() {
           </Route>
           <Route path= "*" element={<p>Page cannot found!!</p>} ></Route>
         </Routes>
+
+        <div className = 'footer'>
+          <p>Useful Links</p>
+          About<br/>
+          Contact
+          
+          <p style = {{textAlign:'right'}}>@KelvinWat</p>
+        </div>
       </CartContext.Provider>
     </BrowserRouter>
 

@@ -32,3 +32,30 @@ code {
   height:30px;
   cursor:pointer;
 }
+.homeBarLabel{
+  text-decoration: none;
+  margin:20px;
+  color: #2f3542;
+  font-size: 20px;
+}
+.homeBarLabel:hover{
+  text-decoration: underline;
+}
+.homeBar{
+  display:block;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+}
+.fruitBar{
+  text-align:center;
+}
+.fruitBarElement{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer{
+  border-top: 1px solid #b2bec3;
+  padding: 50px;
+}
