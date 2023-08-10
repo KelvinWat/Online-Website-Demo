@@ -58,24 +58,16 @@ export default function QuantityBtn({productInfo}) {
     <div >
         {
         (numInCart === 0) ?
-        <div onClick ={handleAdd} style = {{
-            display:'grid',
-            backgroundColor: '#2f3542',
-            color:'#f1f2f6',
-            borderRadius:'40px',
-            alignItems:'center',
-            height:'30px',
-            textAlign: 'center',
-            cursor:'pointer'
-        }}>
+        <div onClick ={handleAdd} className='qtyBtn'>
            Add {productInfo.name} To Shopping Cart
         </div> :
         <div className='addToCartBtn'>
             <div onClick ={handleSubtract} className ='subBtn'>-</div>
 
             <div style = {{
-
-                height:'30px'
+                height:'30px',
+                display :'inline-block',
+                padding:'10px'
             }}>Number: {numInCart}</div>
             
             <div onClick ={handleAdd} className ='addBtn'>+</div>

@@ -41,7 +41,8 @@ function App() {
         <div className = 'footer'>
           <p>Useful Links</p>
           About<br/>
-          Contact
+          Contact<br/>
+          Q&A
           
           <p style = {{textAlign:'right'}}>@KelvinWat</p>
         </div>

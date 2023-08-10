@@ -13,10 +13,6 @@ code {
 }
 
 .addToCartBtn{
-  display: grid;
-  grid-template-columns: 30px 100px 30px;
-  width: 65%;
-  margin: auto;
   text-align: center;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -25,6 +21,9 @@ code {
   -o-user-select: none;
 }
 .subBtn,.addBtn{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #2f3542;
   color: #f1f2f6;
   border-radius:10px;
@@ -58,4 +57,40 @@ code {
 .footer{
   border-top: 1px solid #b2bec3;
   padding: 50px;
+}
+.productImg{
+  width : 70%;
+  display: block;
+  margin: auto;
+}
+.productDetailHead{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.detailName{
+  font-size: 30px;
+}
+.detailPrice{
+  font-size: 20px;
+  text-align: right;
+  color:darkorange;
+}
+.productDetailInfo{
+  padding: 30px;
+}
+.productDetailDescription{
+  padding: 30px;
+  border-top: 1px solid#b2bec3;
+}
+.qtyBtn, .buyNowButton{
+  width:100%;
+  display:block;
+  margin:10px;
+  background-color: #2f3542;
+  color:#f1f2f6;
+  border-radius:40px;
+  align-items:center;
+  height:30px;
+  text-align: center;
+  cursor:pointer;
 }

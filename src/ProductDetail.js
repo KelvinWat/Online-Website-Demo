@@ -25,18 +25,26 @@ export default function ProductDetail() {
 
   return (
     <>
-      {
-        productDetail && 
-        <div>
-        <Title mainTitle = {"Product Detail #" +  params.id}/>
-        {productDetail.name} <br/>
-        Price: {productDetail.price} <br/>
-        <QuantityBtn productInfo={productDetail}/>
-        <br/><br/>
-        </div>
-      }
+      <Title mainTitle = {"Product Detail"} />
 
-      <Link to = "/">Back To Home Page </Link>
+      { productDetail && <>
+        <div className='productDetailHead'>
+          <div>
+            <img  className ='productImg' src = {process.env.PUBLIC_URL + '/img/' + productDetail.image}/>
+          </div>
+    
+          <div className='productDetailInfo'>
+            <p className='detailName'>{productDetail.name}</p>
+            <p className='detailPrice'> ${productDetail.price}</p>
+            <QuantityBtn productInfo={productDetail}/>
+            <button className='buyNowButton'>Buy Now</button>
+          </div>
+        </div>
+        <div className='productDetailDescription'>
+          <p>Product description</p>
+          {productDetail.description}
+        </div>
+      </>}
     </>
   )
 }
