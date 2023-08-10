@@ -5,13 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.footer{
+  border-top: 1px solid #b2bec3;
+  padding: 50px;
+}
 .addToCartBtn{
   text-align: center;
   -webkit-user-select: none;
@@ -54,10 +58,6 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
-.footer{
-  border-top: 1px solid #b2bec3;
-  padding: 50px;
-}
 .productImg{
   width : 70%;
   display: block;
@@ -80,11 +80,12 @@ code {
 }
 .productDetailDescription{
   padding: 30px;
-  border-top: 1px solid#b2bec3;
+  border-top: 1px solid #b2bec3;
 }
 .qtyBtn, .buyNowButton{
   width:100%;
   display:block;
+  font-size: 16px;
   margin:10px;
   background-color: #2f3542;
   color:#f1f2f6;
@@ -93,4 +94,70 @@ code {
   height:30px;
   text-align: center;
   cursor:pointer;
+}
+.cartTableBar{
+  border-bottom: 1px solid #b2bec3;
+  font-size: 22px;
+  padding:0px 20px;
+  display: grid;
+  grid-template-columns: 45% 25% 30%;
+}
+.cartProdText, .cartPriceText{
+  padding: 0px 20px;
+}
+.cartQtnText{
+  text-align: center;
+}
+.cartContent{
+  font-size: 20px;
+  border-bottom: 1px solid #b2bec3;
+  padding:5px 24px;
+  display: grid;
+  grid-template-columns: 5% 40% 25% 30%;
+}
+.cartContentImg{
+  width: 100%;
+}
+.cartContentPrice{
+  padding: 10px;
+  text-align: left;
+}
+.cartContentName{
+  padding: 10px;
+  text-align: left;
+  text-decoration: none;
+  color: #2f3542;
+}
+.cartContentName:hover{
+  text-decoration: underline;
+}
+.checkoutSect{
+  padding: 20px 0 20px 70%;
+  font-size: 22px;
+}
+.payButton{
+  width:50%;
+  display:block;
+  font-size: 16px;
+  margin:10px;
+  background-color: #2f3542;
+  color:#f1f2f6;
+  border-radius:10px;
+  height:30px;
+  cursor:pointer;
+}
+.cartEmptyText{
+  padding: 50px 50px;
+  font-size: 22px;
+}
+.cartToHomeLink{
+  text-decoration: none;
+  color: #2f3542;
+  background-color: #b2bec3;
+  border: 2px solid #2f3542;
+  border-radius: 10px;
+  padding: 3px;
+}
+.cartToHomeLink:hover{
+  text-decoration: underline;
 }

@@ -35,7 +35,7 @@ export default function ProductDetail() {
     
           <div className='productDetailInfo'>
             <p className='detailName'>{productDetail.name}</p>
-            <p className='detailPrice'> ${productDetail.price}</p>
+            <p className='detailPrice'> ${productDetail.price/100}</p>
             <QuantityBtn productInfo={productDetail}/>
             <button className='buyNowButton'>Buy Now</button>
           </div>

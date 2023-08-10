@@ -67,8 +67,8 @@ export default function QuantityBtn({productInfo}) {
             <div style = {{
                 height:'30px',
                 display :'inline-block',
-                padding:'10px'
-            }}>Number: {numInCart}</div>
+                padding:'10px 20px'
+            }}>{numInCart}</div>
             
             <div onClick ={handleAdd} className ='addBtn'>+</div>
         </div>

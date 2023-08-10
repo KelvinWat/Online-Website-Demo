@@ -40,19 +40,12 @@ export default function ProductList() {
 
                   <div className = {styles.productInfo}>
                     <div className = {styles.productName}>{product.name}</div>
-                    <div className = {styles.productPrice}>${product.price}</div>
+                    <div className = {styles.productPrice}>${product.price / 100}</div>
                   </div>
- 
+                  
                 </span> 
-
-              </Link>
-              <QuantityBtn productInfo={product}/>
-              
-            </div>
-            
-
-          
-          
+              </Link>              
+            </div> 
         ))
 
         }
